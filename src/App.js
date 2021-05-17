@@ -3,10 +3,17 @@ import './App.css';
 import Axios from 'axios';
 
 function App() {
-  const [ bookName, setBookName] = useState ("");
-  const [ author, setAuthor] = useState ("");
-  const [ description, setDescription] = useState ("");
-  const [ image, setImage] = useState ("");
+  const [ bookName, setBookName ] = useState ("");
+  const [ author, setAuthor ] = useState ("");
+  const [ description, setDescription ] = useState ("");
+  const [ image, setImage ] = useState ("");
+  const [ bookList, setBookList ] = useState([]);
+
+  useEffect( () => {
+    Axios.get('http://localhost:3001/api/v1/books').then((response) => {
+      setBookList(response.data);
+    });
+  }, []);
 
   const submitBook = () => {
     Axios.post('http://localhost:3001/api/v1/books', {
@@ -64,6 +71,10 @@ function App() {
         />
 
         <button onClick={submitBook}>Add new book</button>
+
+        {bookList.map( (value) => {
+          return <h1>{value.name}</h1>
+        })}
       </div>    
     </div>
   );
