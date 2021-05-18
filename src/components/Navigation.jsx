@@ -4,12 +4,8 @@ import { Link, withRouter } from "react-router-dom";
 function Navigation(props) {
   return (
     <div className="navigation">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <nav>
         <div class="container">
-          <Link class="navbar-brand" to="/">
-            React Multi-Page Website
-          </Link>
-
           <div>
             <ul class="navbar-nav ml-auto">
               <li

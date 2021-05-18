@@ -16,56 +16,67 @@ function CreateBook() {
       description: description,
       image: image,
     }).then( () => {
-      alert("Deu certo porra");
+      alert("Livro adicionado com sucesso.");
     });
   }
 
+
   return (
     <div className="App">
-      <h1>Add a new book</h1>
 
-      <div className="insertBookForm">
-        <label>Name:</label>
-        <input
-          type="text"
-          name="bookName"
-          onChange={(e) => {
-            setBookName(e.target.value);
-          }}
-        />
+        <form onSubmit={submitBook}>
 
+        <div className="insertBookForm">
 
-        <label>Author:</label>
-        <input
-          type="text"
-          name="author"
-          onChange={(e) => {
-            setAuthor(e.target.value);
-          }}
-        />
+          <h1>Add a new book</h1>
+
+          <label>Name:</label>
+          <input
+            type="text"
+            name="bookName"
+            onChange={(e) => {
+              setBookName(e.target.value);
+            }}
+            required
+          />
 
 
-        <label>Description:</label>
-        <input
-          type="text"
-          name="description"
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-        />
+          <label>Author:</label>
+          <input
+            type="text"
+            name="author"
+            onChange={(e) => {
+              setAuthor(e.target.value);
+            }}
+            required
+          />
 
 
-        <label>Image:</label>
-        <input
-          type="text"
-          name="image"
-          onChange={(e) => {
-            setImage(e.target.value);
-          }}
-        />
+          <label>Description:</label>
+          <textarea
+            type="text"
+            name="description"
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+            required
+          />
 
-        <button onClick={submitBook}>Add new book</button>
-      </div>    
+
+          <label>Image:</label>
+          <input
+            type="text"
+            name="image"
+            onChange={(e) => {
+              setImage(e.target.value);
+            }}
+            required
+          />
+
+          <input type="submit" value="Add new book" id="submit-button"></input>
+          </div> 
+       </form>
+         
     </div>
   );
 }

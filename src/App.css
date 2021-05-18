@@ -2,40 +2,120 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border-style: none;
 }
 
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 620px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body,
+input,
+textarea,
+button,
+span {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+}
+
+#submit-button {
+  cursor: pointer;
+  background: #ff6978;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+  border-radius: 5px;
+  width: 200px;
+  height: 30px;
+  color: rgba(255, 255, 255, 1);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.App h1 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ff6978;
+  padding-bottom: 20px;
+}
+
+.App label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+}
+
+.App input {
+  background-color: #fdfcfc;
+  border-radius: 5px;
+  font-weight: 500;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+}
+
+.App textarea {
+  background-color: #fdfcfc;
+  border-radius: 5px;
+  font-weight: 500;
+  box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+  margin: 10px 0px;
+  width: 200px;
+  height: 80px;
+  resize: none;
 }
 
 .insertBookForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 64px;
 }
 
 .insertBookForm input {
-  width: 150px;
-  height: 20px;
-  margin: 10px;
+  width: 200px;
+  height: 30px;
+  margin: 10px 0px;
 }
 
 .book-list {
-  background: #f2f2f2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  padding-top: 64px;
 }
 
 .card h2 h4 {
-  font-family: sans-serif;
   color: #313131;
+  max-width: 100px;
 }
 
 .card h2 {
   font-weight: 700;
   font-size: 12px;
+  max-width: 100px;
 }
 
 .card h4 {
@@ -45,4 +125,8 @@
 
 .card img {
   border-radius: 4px;
+}
+
+.card {
+  margin: 10px;
 }
